@@ -1,0 +1,66 @@
+import numpy as np
+
+def simulate_game(team1_name, team2_name, avg_goals_team1, avg_goals_team2):
+    # Simulate goals for each team
+    goals_team1 = generate_goals(avg_goals_team1)
+    goals_team2 = generate_goals(avg_goals_team2)
+    
+    print(f"Simulation results:")
+    print(f"{team1_name}: {goals_team1}")
+    print(f"{team2_name}: {goals_team2}")
+    
+    if goals_team1 > goals_team2:
+        print(f"{team1_name} wins!")
+    elif goals_team2 > goals_team1:
+        print(f"{team2_name} wins!")
+    else:
+        print("It's a draw! Proceeding to extra time and penalties if necessary...")
+        winner = simulate_extra_time_and_penalties(team1_name, team2_name, avg_goals_team1, avg_goals_team2)
+        print(f"{winner} wins after extra time and penalties!")
+
+def generate_goals(avg_goals):
+    # Generate goals based on a Poisson distribution using numpy
+    goals = np.random.poisson(avg_goals)
+    return goals
+
+def simulate_extra_time_and_penalties(team1_name, team2_name, avg_goals_team1, avg_goals_team2):
+    # Simulate extra time goals
+    extra_time_goals_team1 = generate_goals(avg_goals_team1)
+    extra_time_goals_team2 = generate_goals(avg_goals_team2)
+    
+    # Simulate penalty shootout
+    penalty_goals_team1 = generate_goals(avg_goals_team1 * 0.5)  # Assume 50% of average goals for penalty
+    penalty_goals_team2 = generate_goals(avg_goals_team2 * 0.5)
+    
+    print(f"Extra time results:")
+    print(f"{team1_name}: {extra_time_goals_team1}")
+    print(f"{team2_name}: {extra_time_goals_team2}")
+    
+    if extra_time_goals_team1 > extra_time_goals_team2:
+        return team1_name
+    elif extra_time_goals_team2 > extra_time_goals_team1:
+        return team2_name
+    else:
+        print("Still a draw after extra time! Proceeding to penalty shootout...")
+        print(f"Penalty shootout results:")
+        print(f"{team1_name}: {penalty_goals_team1}")
+        print(f"{team2_name}: {penalty_goals_team2}")
+
+
+        # Determine winner of penalty shootout
+        while penalty_goals_team1 == penalty_goals_team2:
+            penalty_goals_team1 = generate_goals(avg_goals_team1 * 0.5)
+            penalty_goals_team2 = generate_goals(avg_goals_team2 * 0.5)
+        
+        if penalty_goals_team1 > penalty_goals_team2:
+            return team1_name
+        else:
+            return team2_name
+
+# Example usage:
+team1_name = "Team A"
+team2_name = "Team B"
+avg_goals_team1 = 2.1  # Replace with the average goals per game for Team A
+avg_goals_team2 = 1.8  # Replace with the average goals per game for Team B
+
+simulate_game(team1_name, team2_name, avg_goals_team1, avg_goals_team2)
