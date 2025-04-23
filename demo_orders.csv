@@ -1,0 +1,101 @@
+Order ID,Product,Order Country,Order Date,Payment Status,Order Value (€)
+1001,Router,Germany,2025-02-18,Failed,932.92
+1002,Gaming Console,Spain,2025-03-16,Paid,770.97
+1003,Speaker,USA,2025-03-14,Failed,1069.95
+1004,Speaker,United Kingdom,2025-04-20,Refunded,224.63
+1005,Backpack,Netherlands,2025-01-26,Failed,194.89
+1006,Smartwatch,Italy,2025-03-16,Refunded,1128.56
+1007,Hard Drive,France,2025-01-14,Failed,1134.94
+1008,SSD,United Kingdom,2025-03-26,Pending,727.26
+1009,Headphones,Canada,2025-03-18,Failed,55.04
+1010,Kamera,Italy,2025-01-08,Failed,1470.2
+1011,Laptop,France,2025-02-21,Failed,537.12
+1012,Printer,Australia,2025-02-26,Paid,564.9
+1013,Laptop,France,2025-02-27,Failed,1487.89
+1014,Smartwatch,USA,2025-01-08,Failed,266.24
+1015,Kamera,Italy,2025-03-30,Pending,1470.5
+1016,Wireless Mouse,Switzerland,2025-03-09,Failed,384.14
+1017,Backpack,USA,2025-02-24,Failed,87.32
+1018,Tablet,Canada,2025-01-25,Failed,67.06
+1019,Tablet,Spain,2025-01-18,Refunded,1433.81
+1020,Backpack,United Kingdom,2025-03-25,Refunded,249.81
+1021,Router,USA,2025-01-26,Pending,212.91
+1022,Backpack,France,2025-02-14,Pending,1190.9
+1023,Kamera,United Kingdom,2025-01-01,Failed,610.15
+1024,Router,United Kingdom,2025-02-05,Failed,171.15
+1025,Hard Drive,USA,2025-03-19,Paid,771.03
+1026,Speaker,Germany,2025-04-19,Failed,398.39
+1027,Book,Switzerland,2025-01-04,Pending,1467.3
+1028,Backpack,Netherlands,2025-01-02,Pending,1434.8
+1029,Printer,Italy,2025-04-19,Paid,573.2
+1030,TV,Canada,2025-03-26,Pending,1280.88
+1031,TV,Spain,2025-04-21,Paid,220.83
+1032,Speaker,Canada,2025-03-30,Failed,308.7
+1033,Router,France,2025-02-22,Failed,849.56
+1034,Smartwatch,Australia,2025-04-18,Pending,528.37
+1035,Smartwatch,Germany,2025-03-03,Failed,355.36
+1036,Coffee Maker,Spain,2025-03-02,Pending,1398.12
+1037,Keyboard,Spain,2025-02-12,Paid,671.56
+1038,Hard Drive,Germany,2025-01-08,Failed,442.74
+1039,Headphones,Italy,2025-03-22,Paid,441.86
+1040,Backpack,Germany,2025-04-01,Pending,291.65
+1041,Router,Australia,2025-02-18,Failed,1329.95
+1042,Fitness Tracker,USA,2025-04-09,Pending,75.22
+1043,Monitor,Italy,2025-01-04,Refunded,1060.29
+1044,Tablet,Canada,2025-03-30,Refunded,697.55
+1045,Wireless Mouse,Australia,2025-01-20,Failed,162.71
+1046,Router,Netherlands,2025-01-04,Pending,252.27
+1047,TV,Netherlands,2025-03-20,Refunded,1041.0
+1048,Router,France,2025-04-05,Paid,11.33
+1049,Tablet,Canada,2025-01-22,Paid,659.62
+1050,Kamera,Switzerland,2025-01-19,Failed,696.56
+1051,Smartwatch,Australia,2025-02-19,Pending,574.72
+1052,Laptop,USA,2025-04-14,Failed,1150.93
+1053,Backpack,France,2025-02-21,Pending,771.13
+1054,Kamera,Switzerland,2025-03-12,Refunded,514.64
+1055,Laptop,Italy,2025-02-14,Pending,445.07
+1056,Fitness Tracker,Netherlands,2025-01-28,Refunded,350.91
+1057,Laptop,Switzerland,2025-01-02,Pending,57.14
+1058,Backpack,Canada,2025-01-17,Refunded,1455.79
+1059,Hard Drive,USA,2025-02-17,Pending,459.64
+1060,Wireless Mouse,Netherlands,2025-03-26,Paid,1314.22
+1061,Headphones,Switzerland,2025-04-11,Failed,144.43
+1062,Coffee Maker,United Kingdom,2025-03-08,Pending,865.08
+1063,TV,United Kingdom,2025-04-12,Paid,734.04
+1064,Printer,Canada,2025-01-05,Failed,553.92
+1065,Router,Italy,2025-04-13,Failed,645.38
+1066,Headphones,Germany,2025-03-11,Paid,510.28
+1067,Smartphone,Netherlands,2025-03-19,Paid,1359.77
+1068,Kamera,Netherlands,2025-04-03,Paid,974.74
+1069,Laptop,Spain,2025-02-07,Refunded,893.35
+1070,Keyboard,United Kingdom,2025-04-13,Failed,1389.13
+1071,Hard Drive,USA,2025-02-12,Paid,558.25
+1072,Coffee Maker,Canada,2025-01-07,Pending,68.14
+1073,Coffee Maker,France,2025-02-23,Refunded,705.72
+1074,Printer,Australia,2025-01-04,Refunded,1212.21
+1075,Headphones,USA,2025-01-28,Failed,90.83
+1076,Hard Drive,Canada,2025-03-08,Pending,1097.41
+1077,Kamera,Germany,2025-02-06,Refunded,651.85
+1078,Keyboard,Netherlands,2025-02-18,Refunded,1170.89
+1079,Printer,Switzerland,2025-01-27,Paid,735.14
+1080,Monitor,USA,2025-02-04,Paid,276.72
+1081,Smartphone,USA,2025-03-18,Refunded,124.81
+1082,Speaker,Germany,2025-01-30,Paid,125.5
+1083,Book,Italy,2025-01-13,Failed,105.42
+1084,Speaker,Switzerland,2025-02-12,Paid,696.99
+1085,Fitness Tracker,Australia,2025-02-10,Pending,1465.94
+1086,TV,United Kingdom,2025-01-30,Paid,345.49
+1087,Headphones,Netherlands,2025-02-16,Failed,896.53
+1088,Laptop,Australia,2025-02-05,Pending,262.96
+1089,Kamera,United Kingdom,2025-04-16,Paid,366.14
+1090,Book,Italy,2025-03-27,Pending,68.44
+1091,Fitness Tracker,Germany,2025-01-29,Paid,1178.66
+1092,Book,Italy,2025-03-23,Pending,537.52
+1093,Laptop,Netherlands,2025-02-21,Pending,326.34
+1094,Coffee Maker,France,2025-02-15,Failed,817.95
+1095,Gaming Console,Italy,2025-03-15,Pending,428.25
+1096,Tablet,USA,2025-02-04,Pending,526.69
+1097,Wireless Mouse,Australia,2025-03-05,Failed,1380.13
+1098,Router,Spain,2025-01-09,Paid,1257.4
+1099,Wireless Mouse,Netherlands,2025-03-24,Paid,459.84
+1100,Monitor,Spain,2025-01-24,Paid,327.25
