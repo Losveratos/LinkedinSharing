@@ -1,0 +1,58 @@
+import requests
+import pandas as pd
+from pyspark.sql import SparkSession
+
+# Spark starten (wenn in Fabric Notebook ausgeführt)
+spark = SparkSession.builder.getOrCreate()
+
+# SPARQL-Abfrage: Deutsche Städte mit > 1 Mio Einwohnern + optionale Felder
+sparql_query = """
+SELECT ?city ?cityLabel ?population ?country ?countryLabel ?coord ?area ?website WHERE {
+  ?city wdt:P31/wdt:P279* wd:Q515.
+  ?city wdt:P17 wd:Q183.                # Deutschland (Q183)
+  ?city wdt:P1082 ?population.          # Einwohner
+  OPTIONAL { ?city wdt:P625 ?coord. }   # Koordinaten
+  OPTIONAL { ?city wdt:P2046 ?area. }   # Fläche in km²
+  OPTIONAL { ?city wdt:P856 ?website. } # Webseite
+
+  FILTER(?population > 1000000)
+
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "de,en". }
+}
+ORDER BY DESC(?population)
+"""
+
+# HTTP-Header
+headers = {
+    "Accept": "application/sparql-results+json",
+    "User-Agent": "Mozilla/5.0 (compatible; FabricBot/1.0; +https://example.org)"
+}
+
+# SPARQL-Endpunkt
+url = "https://query.wikidata.org/sparql"
+
+# Anfrage ausführen mit Fehlerprüfung
+response = requests.post(url, data={"query": sparql_query}, headers=headers, timeout=60)
+response.raise_for_status()
+data = response.json()
+
+# Ergebnisse verarbeiten
+rows = []
+for item in data["results"]["bindings"]:
+    rows.append({
+        "city": item.get("cityLabel", {}).get("value", None),
+        "country": item.get("countryLabel", {}).get("value", None),
+        "population": int(item["population"]["value"]),
+        "coord": item.get("coord", {}).get("value", None),
+        "area_km2": float(item["area"]["value"]) if "area" in item else None,
+        "website": item.get("website", {}).get("value", None)
+    })
+
+# Pandas → Spark DataFrame
+pdf = pd.DataFrame(rows)
+df = spark.createDataFrame(pdf)
+
+# In Lakehouse speichern (Delta-Tabelle)
+df.write.format("delta").mode("overwrite").saveAsTable("Staedte_Million_DEU")
+
+print("✅ Tabelle 'Staedte_Million_DEU' erfolgreich im Lakehouse gespeichert.")
